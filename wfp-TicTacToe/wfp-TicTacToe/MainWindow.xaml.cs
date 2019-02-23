@@ -99,21 +99,21 @@ namespace wfp_TicTacToe
         private void CheckForWinner()
         {
             #region Horizontal Wins
-            if (mResults[0] != MarkType.Free && mResults[0] == mResults[1] && mResults[1] == mResults[2])
+            if (WinCheck(0, 1, 2))
             {
                 mGameEnded = true;
 
                 Button0_0.Background = Button1_0.Background = Button2_0.Background = Brushes.Aqua;
             }
 
-            if (mResults[3] != MarkType.Free && mResults[3] == mResults[4] && mResults[4] == mResults[5])
+            if (WinCheck(3, 4, 5))
             {
                 mGameEnded = true;
 
                 Button0_1.Background = Button1_1.Background = Button2_1.Background = Brushes.Aqua;
             }
 
-            if (mResults[6] != MarkType.Free && mResults[6] == mResults[7] && mResults[7] == mResults[8])
+            if (WinCheck(6, 7, 8))
             {
                 mGameEnded = true;
 
@@ -122,21 +122,21 @@ namespace wfp_TicTacToe
             #endregion
 
             #region Vertical Wins
-            if (mResults[0] != MarkType.Free && mResults[0] == mResults[3] && mResults[3] == mResults[6])
+            if (WinCheck(0, 3, 6))
             {
                 mGameEnded = true;
 
                 Button0_0.Background = Button0_1.Background = Button0_2.Background = Brushes.Aqua;
             }
 
-            if (mResults[1] != MarkType.Free && mResults[1] == mResults[4] && mResults[4] == mResults[7])
+            if (WinCheck(1, 4, 7))
             {
                 mGameEnded = true;
 
                 Button1_0.Background = Button1_1.Background = Button1_2.Background = Brushes.Aqua;
             }
 
-            if (mResults[2] != MarkType.Free && mResults[2] == mResults[5] && mResults[5] == mResults[8])
+            if (WinCheck(2, 5, 8))
             {
                 mGameEnded = true;
 
@@ -145,14 +145,14 @@ namespace wfp_TicTacToe
             #endregion
 
             #region Diagonal Wins
-            if (mResults[0] != MarkType.Free && mResults[0] == mResults[4] && mResults[4] == mResults[8])
+            if (WinCheck(0, 4, 8))
             {
                 mGameEnded = true;
 
                 Button0_0.Background = Button1_1.Background = Button2_2.Background = Brushes.Aqua;
             }
 
-            if (mResults[2] != MarkType.Free && mResults[2] == mResults[4] && mResults[4] == mResults[6])
+            if (WinCheck(2, 4, 6))
             {
                 mGameEnded = true;
 
@@ -171,6 +171,11 @@ namespace wfp_TicTacToe
                 });
             }
             #endregion
+        }
+
+        private bool WinCheck(int a, int b, int c)
+        {
+            return mResults[a] != MarkType.Free && mResults[a] == mResults[b] && mResults[b] == mResults[c];
         }
     }
 }
