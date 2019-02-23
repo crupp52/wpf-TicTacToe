@@ -11,6 +11,7 @@
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="BorderThickness" Value="0.3"></Setter>
             <Setter Property="FontSize" Value="70"></Setter>
         </Style>
     </Window.Resources>
@@ -27,16 +28,16 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Button x:Name="Button0_0" Grid.Column="0" Grid.Row="0">X</Button>
-        <Button x:Name="Button1_0" Grid.Column="1" Grid.Row="0">O</Button>
-        <Button x:Name="Button2_0" Grid.Column="2" Grid.Row="0"></Button>
+        <Button Click="Button_Click" x:Name="Button0_0" Grid.Column="0" Grid.Row="0">X</Button>
+        <Button Click="Button_Click" x:Name="Button1_0" Grid.Column="1" Grid.Row="0">O</Button>
+        <Button Click="Button_Click" x:Name="Button2_0" Grid.Column="2" Grid.Row="0"></Button>
 
-        <Button x:Name="Button0_1" Grid.Column="0" Grid.Row="1"></Button>
-        <Button x:Name="Button1_1" Grid.Column="1" Grid.Row="1"></Button>
-        <Button x:Name="Button2_1" Grid.Column="2" Grid.Row="1"></Button>
+        <Button Click="Button_Click" x:Name="Button0_1" Grid.Column="0" Grid.Row="1"></Button>
+        <Button Click="Button_Click" x:Name="Button1_1" Grid.Column="1" Grid.Row="1"></Button>
+        <Button Click="Button_Click" x:Name="Button2_1" Grid.Column="2" Grid.Row="1"></Button>
 
-        <Button x:Name="Button0_2" Grid.Column="0" Grid.Row="2"></Button>
-        <Button x:Name="Button1_2" Grid.Column="1" Grid.Row="2"></Button>
-        <Button x:Name="Button2_2" Grid.Column="2" Grid.Row="2"></Button>
+        <Button Click="Button_Click" x:Name="Button0_2" Grid.Column="0" Grid.Row="2"></Button>
+        <Button Click="Button_Click" x:Name="Button1_2" Grid.Column="1" Grid.Row="2"></Button>
+        <Button Click="Button_Click" x:Name="Button2_2" Grid.Column="2" Grid.Row="2"></Button>
     </Grid>
 </Window>

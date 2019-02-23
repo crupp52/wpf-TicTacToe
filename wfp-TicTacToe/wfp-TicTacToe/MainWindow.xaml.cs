@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace wfp_TicTacToe
 {
@@ -20,9 +11,63 @@ namespace wfp_TicTacToe
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Priavte Members
+
+        /// <summary>
+        /// Holds the current result of cells in this active game.
+        /// </summary>
+        private MarkType[] mResults;
+
+        /// <summary>
+        /// True if it is the player 1 is turn (X) or the palyer 2 is turn (O).
+        /// </summary>
+        private bool mPlayer1Turn;
+
+        /// <summary>
+        /// True if the game is ended.
+        /// </summary>
+        private bool mGameEnded;
+
+        #endregion
+
+        #region Constructor
+
         public MainWindow()
         {
             InitializeComponent();
+
+            NewGame();
+        }
+          
+        #endregion
+
+        /// <summary>
+        /// Start a new game and reset all values back to the start
+        /// </summary>
+        private void NewGame()
+        {
+            mResults = new MarkType[9];
+
+            for (int i = 0; i < mResults.Length; i++)
+            {
+                mResults[i] = MarkType.Free;
+            }
+
+            mPlayer1Turn = true;
+
+            Container.Children.Cast<Button>().ToList().ForEach(button =>
+            {
+                button.Content = string.Empty;
+                button.Background = Brushes.White;
+                button.Foreground = Brushes.Blue;
+            });
+
+            mGameEnded = false;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
